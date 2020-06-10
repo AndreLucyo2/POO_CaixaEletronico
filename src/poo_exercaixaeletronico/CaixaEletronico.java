@@ -20,22 +20,24 @@ public class CaixaEletronico
     public void sacar(double valor)
     {
         saldo -= valor;
+        numeroSaques += 1;
     }
 
     public void depositar(double valor)
     {
         //Para manter o sldo inicial:
-        if(numeroDepositos == 0)
+        if (numeroDepositos == 0)
         {
-           quantiaDinheiro = valor;//Primeiro Deposito
-           saldo = quantiaDinheiro;//Sado
+            quantiaDinheiro = valor;//Primeiro Deposito
+            saldo = quantiaDinheiro;//Sado
+            numeroDepositos += 1;
         }
         else
         {
             //Saldo:
             saldo += valor;
+            numeroDepositos += 1;
         }
-        
     }
 
     public double consultarSaldo()
