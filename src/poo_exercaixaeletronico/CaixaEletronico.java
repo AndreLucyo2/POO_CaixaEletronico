@@ -12,7 +12,7 @@ package poo_exercaixaeletronico;
 public class CaixaEletronico
 {
 
-    double quantiaDinheiro;//inicial
+    double quantiaDinheiro;
     double saldo;
     int numeroSaques;
     int numeroDepositos;
@@ -25,11 +25,11 @@ public class CaixaEletronico
 
     public void depositar(double valor)
     {
-        //Para manter o sldo inicial:
+        //Para manter o saldo inicial:
         if (numeroDepositos == 0)
         {
             quantiaDinheiro = valor;//Primeiro Deposito
-            saldo = quantiaDinheiro;//Sado
+            saldo = quantiaDinheiro;//Saldo
             numeroDepositos += 1;
         }
         else
