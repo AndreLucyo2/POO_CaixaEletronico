@@ -21,33 +21,44 @@ public class Main
     {
         Scanner entrada = new Scanner(System.in);
         CaixaEletronico cxElet = new CaixaEletronico();
-        int continuar=0;
-        
+        int continuar = 0;
+
         System.out.print("Iniciando Caixa...\n\n");
 
         System.out.println("Deposito inicial:");
         cxElet.depositar(entrada.nextDouble());
 
-        System.out.println("O que Deseja Fazer?\n  [1]Deposito\n  [2]Saque\n  [3]Saldo");
-        int opcao = entrada.nextInt();
-
         do
         {
+            System.out.println("O que Deseja Fazer?\n  [1]Deposito\n  [2]Saque\n  [3]Saldo\n  [0]Cancelar ");
+            int opcao = entrada.nextInt();
+
             switch (opcao)
             {
+                case 0:
+                    System.out.println("Operação Cancelada!");
+                    
+                    break;
+
                 case 1:
                     System.out.println("Operação Deposito!");
                     System.out.println("Informe valor para deposito!");
                     cxElet.depositar(entrada.nextInt());
+
+                    System.out.println("Saldo Atual: " + cxElet.saldo);
 
                     break;
                 case 2:
                     System.out.println("Operação Saque!");
                     System.out.println("Informe valor para Sacar!");
                     cxElet.sacar(entrada.nextInt());
+
+                    System.out.println("Saldo Atual: " + cxElet.saldo);
+
                     break;
                 case 3:
                     System.out.println("Operação Saldo!");
+                    System.out.println("Saldo Atual: " + cxElet.saldo);
 
                     break;
                 default:
@@ -59,14 +70,11 @@ public class Main
 
         }
         while (continuar == 1);
-        
-        
 
         System.out.println("Saldo Inicial: " + cxElet.quantiaDinheiro);
         System.out.println("Numero de saques: " + cxElet.numeroSaques);
         System.out.println("Numero de Depositos: " + cxElet.numeroDepositos);
         System.out.println("Saldo Atual: " + cxElet.saldo);
-        
 
     }
 
